@@ -15,26 +15,25 @@
 		  
       </header>
       <main>
-         
-        <h4>Je ne suis pas encore inscrit</h4>
-            <form action='cooperative.html' method='get'>
-				<p>Adresse mail : <input type='text' name='login'/></p>
-				<p>Mot de passe : <input type='password' name='password'/></p>
-                <p>Nom : <input type='text' name='nom'/></p>
-                <p>Prénom : <input type='text' name='prenom'/></p>
-				<p>Adresse : <input type='text' name='adresse'/></p>
-
-                <p>Groupe de travail : <br/>
-                    <select name='groupe'>
-						<option value='groupetest'>groupe test</option>
-                        <option value='groupe1'>groupe 1</option>
-                        <option value='groupe2'>groupe 2</option>
-                        <option value='groupe3'>groupe 3</option>
-						<option value='groupe4'>groupe 4</option>
-                    </select>
-                </p>
-                <p><input type='submit' value='valider'/></p>
-            </form>
+        <div>
+			<h3 onmouseover="couleurtitre()">Bienvenue</h3>
+			Nous sommes le <?php echo date("d:m:y")?> et il est <?php echo date("H:i:s");?>
+			<br/>
+			votre adresse IP est  <?php echo $_SERVER['REMOTE_ADDR'];?><br/>
+			Ce script est exécuté sur le serveur <?php echo $_SERVER['SERVER_SOFTWARE'];?> qui se 
+			trouve à l'adresse <?php echo $_SERVER['SERVER_ADDR']?>.
+		</div>
+		
+		<?php 
+            if (isset($_GET['nom'])){
+              $nom = $_GET['nom'];
+            }
+            else 
+            {
+              $nom = 'Inconnu';
+            }
+            echo $nom;?></b>
+        
       </main>
       <aside>
         <div>
