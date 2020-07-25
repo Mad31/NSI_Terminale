@@ -15,14 +15,16 @@
 		  
       </header>
       <main>
-        <div>
+        <div class='cadre'>
 			<h3 onmouseover="couleurtitre()">Bienvenue</h3>
 			Nous sommes le <?php echo date("d:m:y")?> et il est <?php echo date("H:i:s");?>
 			<br/>
 			votre adresse IP est  <?php echo $_SERVER['REMOTE_ADDR'];?><br/>
 			Ce script est exécuté sur le serveur <?php echo $_SERVER['SERVER_SOFTWARE'];?> qui se 
 			trouve à l'adresse <?php echo $_SERVER['SERVER_ADDR']?>.<br/>
-			Vous appartenez au groupe <?php echo $_GET['groupe']; ?>
+			Vous appartenez au groupe <?php echo $_GET['groupe']; ?> <br>
+		</div>
+		<div class='cadre'>
 			<?php
 				$servername = 'localhost';
 				$username = $_GET['groupe'];
@@ -35,7 +37,7 @@
             if($conn->connect_error){
                 die('Erreur : ' .$conn->connect_error);
             }
-            echo 'Connexion réussie';
+            echo 'Connexion à la base réussie';
         ?>
 			
 		</div>
