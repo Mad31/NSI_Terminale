@@ -15,7 +15,8 @@
 		  
       </header>
       <main>
-        <div class='cadre'>
+        <div>
+		<p class='cadre'>
 			<h3 onmouseover="couleurtitre()">Bienvenue</h3>
 			Nous sommes le <?php echo date("d:m:y")?> et il est <?php echo date("H:i:s");?>
 			<br/>
@@ -23,8 +24,9 @@
 			Ce script est exécuté sur le serveur <?php echo $_SERVER['SERVER_SOFTWARE'];?> qui se 
 			trouve à l'adresse <?php echo $_SERVER['SERVER_ADDR']?>.<br/>
 			Vous appartenez au groupe <?php echo $_GET['groupe']; ?> <br>
-		</div>
-		<div class='cadre'>
+		</p>
+		<br/>
+		<p class='cadre'>
 			<?php
 				$servername = 'localhost';
 				$username = $_GET['groupe'];
@@ -39,18 +41,10 @@
             }
             echo 'Connexion à la base réussie';
         ?>
-			
+		</p>
 		</div>
 		
-		<?php 
-            if (isset($_GET['nom'])){
-              $nom = $_GET['nom'];
-            }
-            else 
-            {
-              $nom = 'Inconnu';
-            }
-            echo $nom;?></b>
+
         
       </main>
       <aside>
