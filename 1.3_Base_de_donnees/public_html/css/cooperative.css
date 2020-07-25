@@ -85,15 +85,13 @@ td, th {
     border-color: #000;
   }
   
-.cadre {
-    /* Uniquement centrer le formulaire sur la page */
-    margin: 0 auto;
-    width: 400px;
-    /* Encadré pour voir les limites du formulaire */
-    padding: 1em;
-    border: 2px solid #CCC;
-    border-radius: 2em;
-  }
+.shadowbox {
+  width: 15em;
+  border: 1px solid #333;
+  box-shadow: 8px 8px 5px #444;
+  padding: 8px 12px;
+  background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+}
   
   
   .button {
