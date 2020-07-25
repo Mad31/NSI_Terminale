@@ -21,7 +21,23 @@
 			<br/>
 			votre adresse IP est  <?php echo $_SERVER['REMOTE_ADDR'];?><br/>
 			Ce script est exécuté sur le serveur <?php echo $_SERVER['SERVER_SOFTWARE'];?> qui se 
-			trouve à l'adresse <?php echo $_SERVER['SERVER_ADDR']?>.
+			trouve à l'adresse <?php echo $_SERVER['SERVER_ADDR']?>.<br/>
+			Vous appartenez au groupe <?php echo $_GET['groupe']; ?>
+			<?php
+				$servername = 'localhost';
+				$username = $_GET['groupe'];
+				$password = 12345 ;
+            
+            //On établit la connexion
+            $conn = new mysqli($servername, $username, $password);
+            
+            //On vérifie la connexion
+            if($conn->connect_error){
+                die('Erreur : ' .$conn->connect_error);
+            }
+            echo 'Connexion réussie';
+        ?>
+			
 		</div>
 		
 		<?php 
