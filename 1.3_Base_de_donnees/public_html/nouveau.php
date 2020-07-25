@@ -30,9 +30,10 @@
 				$servername = 'localhost';
 				$username = $_GET['groupe'];
 				$password = 12345 ;
+				$database = $_GET['groupe'];
             
             //On établit la connexion
-            $conn = new mysqli($servername, $username, $password);
+            $conn = mysqli_connect($servername, $username, $password, $database);
             
             //On vérifie la connexion
             if($conn->connect_error){
