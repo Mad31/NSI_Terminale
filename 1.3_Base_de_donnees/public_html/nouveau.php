@@ -55,7 +55,7 @@
 		$adresse = $_GET['adresse'];
 		
 		$sql = "INSERT INTO buveurs (email, nom_buveur, prenom_buveur, mot_de_passe,adresse)
-		VALUES ({$login}, {$nom}, {$prenom}, {$mdp}, {$adresse})";
+		VALUES ('$login', '$nom', '$prenom', '$mdp', '$adresse');";
 
 		if ($conn->query($sql) === TRUE) {
 					echo "Nouvel enregistement réalisé";
