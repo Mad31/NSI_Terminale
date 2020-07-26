@@ -59,7 +59,7 @@
 		</div>
 		<br/>
 		<div class='shadowbox' align='center'>
-			<h3 onmouseover="couleurtitre()">Voici Le récapitulatif de votre commande :</h3>
+			<h3 onmouseover="couleurtitre()">Voici le récapitulatif de votre commande :</h3>
 			<table align='center'>
 			<tr>
 				<td width='35%' ><p> Cru </p></td><td width='10%'><p> Année </p></td> <td width='15%'><p> degrés</p></td>
@@ -71,7 +71,12 @@
 			// on parse la liste des vins
 				while($row = mysqli_fetch_assoc($resultat)) {
 					if(isset($_GET['commander']) && in_array($row['nv'], $_GET['commander'])){
-					 echo "<tr><td>".$row['cru']."</td><td>".$row['annee']."</td><td>".$row['degre']."</td></tr>" ;}
+						// On regarde si une commande n'a pas déjà été passée.
+						$sql2 = "SELECT email,nv FROM commande WHERE nv=$row['nv'] AND email = $_GET['login];";
+						$resultat2 = mysqli_query($conn, $sql2);
+						if (mysqli_num_rows($resultat) == 0) {
+							echo "<tr><td>".$row['cru']."</td><td>".$row['annee']."</td><td>".$row['degre']."</td></tr>" ;}
+					}
 					}
 			  }
 			else {echo "<tr><td colspan='3'>Pas de vins en stock </td></tr>";}
