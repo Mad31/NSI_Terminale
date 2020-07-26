@@ -66,12 +66,12 @@
 				</td><td width='10%'> Commande </td>
 			</tr>
 			<?php 
-			$sql = "SELECT nv, cru, annee, degre FROM vins ;";
+			$sql = "SELECT nv, cru, annee, degre, stock FROM vins ;";
 			$resultat = mysqli_query($conn, $sql);
 			if (mysqli_num_rows($resultat) > 0) {
 			// on parse la liste des vins
 				while($row = mysqli_fetch_assoc($resultat)) {
-					if(in_array($row['nv'], (int)$_GET['commander'])){
+					if(isset($_GET['commander']) && in_array($row['nv'], $_GET['commander'])){
 					 echo "<tr><td>".$row['cru']."</td><td>".$row['annee']."</td><td>".$row['degre']."</td></tr>" ;}
 					}
 			  }
