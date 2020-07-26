@@ -42,7 +42,18 @@
             $foo = false;
 			$sql = "SELECT email, mot_de_passe FROM buveurs";
 			$resultat = mysqli_query($conn, $sql);
+			if (mysqli_num_rows($resultat) > 0) {
+			// on parse pour vérifier
+				while($row = mysqli_fetch_assoc($resultat)) {
+					echo "id: " . $row["email"]. " - Name: " . $row["mot_de_passe"]. "<br>";
+					 // if ($row['email'] == $_GET['login'] and $row['mot_de_passe'] == (int)$_GET['password'])
+					// {$foo = true; }
+					}
+			  } 
 			
+			// si l'utilisateur n'a pas été identifié on revient à l'index.
+			if ($foo == false)  { echo 'Connexion non réussie'; }
+			else { echo 'Connexion échouée'} ;
         ?>
 		<br/>
 
