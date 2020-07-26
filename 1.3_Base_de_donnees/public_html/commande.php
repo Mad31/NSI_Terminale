@@ -100,9 +100,8 @@
           <h3>Identifiez-vous !</h3>
           <h4>Je suis déjà connecté !</h4>
 		  <br/>
-			Mon Login : <?php echo $_GET['login'];
-			  }
-			else {echo "Pas de résultats<br/> Que faites vous ici ?";}
+			Mon Login : <?php 
+			echo $_GET['login'];
 		?>
         </div>
       </aside>
