@@ -26,6 +26,7 @@
 			trouve à l'adresse <?php echo $_SERVER['SERVER_ADDR']?>.<br/>
 			Vous appartenez au groupe <?php echo $_GET['groupe']; ?> <br>
 		</div>
+		<div class='shadowbox' align='center'>
 		<?php
 			$servername = 'localhost';
 			$username = $_GET['groupe'];
@@ -49,12 +50,14 @@
 					 // if ($row['email'] == $_GET['login'] and $row['mot_de_passe'] == (int)$_GET['password'])
 					// {$foo = true; }
 					}
-			  } 
+			  }
+			else {echo "Pas de résultats";}
 			
 			// si l'utilisateur n'a pas été identifié on revient à l'index.
 			if ($foo == false)  { echo 'Connexion non réussie'; }
-			else { echo 'Connexion échouée'} ;
+			else { echo 'Connexion échouée'; } 
         ?>
+		</div>
 		<br/>
 
       </main>
