@@ -75,9 +75,9 @@
 					}
 			  }
 			else {echo "<tr><td colspan='3'>Pas de vins en stock </td></tr>";}
-			if (empty($_GET['commander'])) {
-					echo "<tr><td colspan='3'>Pas de vins commandés ! </td></tr>";
-				}
+			//if (empty($_GET['commander'])) {
+			//		echo "<tr><td colspan='3'>Pas de vins commandés ! </td></tr>";
+			// 	}
 			echo "</table>";
 			?>
 			
