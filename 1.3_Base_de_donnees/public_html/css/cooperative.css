@@ -87,10 +87,9 @@ td, th {
   
 .shadowbox {
   display: flex;
-  align-items: center;
   justify-content: center;
   text-align : center;
-  width: 90%;
+  width: 95%;
   border: 1px solid #333;
   box-shadow: 8px 8px 5px #444;
   padding: 8px 12px;

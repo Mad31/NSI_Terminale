@@ -64,8 +64,8 @@
 			<form>
 			<table align='center'>
 			<tr>
-				<td width='25%' ><p> Cru </p></td><td width='10%'><p> Année </p></td> <td width='15%'><p> degrés</p></td><td width='15%'><p> Stock </p>
-				</td><td> Commande </td>
+				<td width='35%' ><p> Cru </p></td><td width='10%'><p> Année </p></td> <td width='15%'><p> degrés</p></td><td width='15%'><p> Stock </p>
+				</td><td width='10%'> Commande </td>
 			</tr>
 			<?php 
 			$sql = "SELECT nv,cru, annee,degre,stock FROM vins ;";
@@ -73,13 +73,15 @@
 			if (mysqli_num_rows($resultat) > 0) {
 			// on parse la liste des vins
 				while($row = mysqli_fetch_assoc($resultat)) {
-					 echo "<tr><td>".$row['cru']."</td><td>".$row['annee']."</td><td>".$row['degre']."</td><td>".$row['stock']."</td>
-					 <input type='checkbox'  name='commander' value=".$row['nv']."></tr>" ;
+					 echo "<tr><td>".$row['cru']."</td><td>".$row['annee']."</td><td>".$row['degre']."</td><td>".$row['stock']."</td><td>
+					 <input type='checkbox'  name='commander' value=".$row['nv']."></td></tr>" ;
 					}
 			  }
 			else {echo "<tr><td colspan='5'>Pas de résultats </td></tr>";}
 			?>
 			</table>
+			<br/>
+			<p><input type='submit' value='valider votre commande'/></p>
 			</form>
 		</div>
 		<br/>
