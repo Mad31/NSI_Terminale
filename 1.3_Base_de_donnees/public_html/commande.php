@@ -28,7 +28,7 @@
 			// on parse pour vérifier
 				while($row = $result->fetch_assoc()) {
 					if ($row['email'] == $_GET['login'] and $row['mot_de_passe'] == $_GET['password'])
-					{$foo = true}
+					{$foo = true; }
 					}
 			} 
 			else {
@@ -36,10 +36,8 @@
 			exit();
 			}
 			// si l'utilisateur n'a pas été identifié on revient à l'index.
-			if ($foo == false)  {
-				header('Location: index.html');
-			exit();
-			}
+			if ($foo == false)  { echo 'Connexion non réussie'; }
+			else { echo 'Connexion échouée' ;
         ?>
 		  <p class="flotte">
           <img src="images/cooperative.jpg" width="450" alt="cooperative" />

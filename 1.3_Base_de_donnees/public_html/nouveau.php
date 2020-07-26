@@ -25,7 +25,7 @@
 			Vous appartenez au groupe <?php echo $_GET['groupe']; ?> <br>
 		</div>
 		<br/>
-		<div class='shadowbox' align='center>
+		<div class='shadowbox' align='center'>
 			<?php
 				$servername = 'localhost';
 				$username = $_GET['groupe'];
@@ -75,7 +75,7 @@
         <div>
           <h3>Identifiez-vous !</h3>
           <h4>Je suis déjà inscrit</h4>
-          <form>
+          <form action='commande.php' method='get'>
               <p>Login : <input type='text' name='login'/></p>
               <p>Mot de passe : <input type='password' name='password'/></p>
 			  <p>Groupe de travail : <br/>
