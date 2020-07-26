@@ -26,18 +26,18 @@
 			
 			if ($resultat->num_rows > 0) {
 			// on parse pour vérifier
-				while($row = $result->fetch_assoc()) {
+			while($row = $result->fetch_assoc()) {
 					if ($row['email'] == $_GET['login'] and $row['mot_de_passe'] == $_GET['password'])
 					{$foo = true; }
 					}
 			} 
 			else {
-			header('Location: index.html');
+			header('Location: http://snt.egd.mg:8080/~groupetest/index.html');
 			exit();
 			}
 			// si l'utilisateur n'a pas été identifié on revient à l'index.
 			if ($foo == false)  { echo 'Connexion non réussie'; }
-			else { echo 'Connexion échouée' ;
+			else { echo 'Connexion échouée'} ;
         ?>
 		  <p class="flotte">
           <img src="images/cooperative.jpg" width="450" alt="cooperative" />
