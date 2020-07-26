@@ -77,7 +77,7 @@
 						if (mysqli_num_rows($resultat2) == 0) {
 							echo "<tr><td>".$row['cru']."</td><td>".$row['annee']."</td><td>".$row['degre']."</td></tr>" ;
 							$sql3 ="INSERT INTO commande (email, nv,date_commande, livraison_commande, quantite) 
-							VALUES ('".$_GET['login']."',".$row['cru'].",".date(Y-m-d)."',0,2);";
+							VALUES ('".$_GET['login']."','".$row['nv']."', '".date(Y-m-d)."',0,2);";
 							echo "<tr><td colspan =3>".$sql3."</td></tr>";
 							mysqli_query($conn, $sql3);}
 						else { echo "<tr><td>".$row['cru']."</td><td colspan='2'> Ce vin est déjà commandé</td></tr>" ;}
