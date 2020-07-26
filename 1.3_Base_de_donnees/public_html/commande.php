@@ -80,7 +80,7 @@
 			else {echo "<tr><td colspan='5'>Pas de vins en stock </td></tr>";}
 			?>
 			</table>
-			<input type='hidden' value=<?php echo $_GET['login']; ?> name='login' />";
+			<input type='hidden' value=<?php echo $_GET['login']; ?> name='login' />
 			<input type='hidden' value=<?php echo $_GET['password'];?>  name='password' />
 			<input type='hidden' value=<?php echo $_GET['groupe'];?>  name='groupe' />
 			

@@ -71,7 +71,7 @@
 			if (mysqli_num_rows($resultat) > 0) {
 			// on parse la liste des vins
 				while($row = mysqli_fetch_assoc($resultat)) {
-					if(in_array($row['nv'], $_GET['commander'])){
+					if(in_array($row['nv'], (int)$_GET['commander'])){
 					 echo "<tr><td>".$row['cru']."</td><td>".$row['annee']."</td><td>".$row['degre']."</td></tr>" ;}
 					}
 			  }
