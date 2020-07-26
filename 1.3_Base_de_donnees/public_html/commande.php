@@ -53,8 +53,8 @@
 			else {echo "Pas de résultats";}
 			
 			// si l'utilisateur n'a pas été identifié on revient à l'index.
-			if ($foo == false)  { echo 'Connexion non réussie'; }
-			else { echo 'Connexion échouée'; } 
+			if ($foo == false)  { echo "Connexion échouée !!! "; }
+			else { echo "Connexion Réussie !!! "; } 
         ?>
 		</div>
 		<br/>
