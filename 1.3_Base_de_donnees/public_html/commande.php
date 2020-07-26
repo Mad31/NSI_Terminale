@@ -80,8 +80,8 @@
 			else {echo "<tr><td colspan='5'>Pas de résultats </td></tr>";}
 			?>
 			</table>
-			<input type='hidden' value=<?php echo $_GET['login']?> name='login' />";
-			<input type='hidden' value=<?php echo $_GET['password']?>  name='password' />
+			<input type='hidden' value=<?php echo $_GET['login']; ?> name='login' />";
+			<input type='hidden' value=<?php echo $_GET['password'];?>  name='password' />
 			
 			
 			<br/>
@@ -100,8 +100,7 @@
           <h3>Identifiez-vous !</h3>
           <h4>Je suis déjà connecté !</h4>
 		  <br/>
-		<?php 
-			echo "Mon Login : ".$_GET['login'];
+			Mon Login : <?php echo $_GET['login'];
 			  }
 			else {echo "Pas de résultats<br/> Que faites vous ici ?";}
 		?>
