@@ -14,7 +14,7 @@
 			$database = $_GET['groupe'];
             
             //On établit la connexion
-            $conn = new mysqli($servername, $username, $password, $database$);
+            $conn = new mysqli($servername, $username, $password, $database);
             
             //On vérifie la connexion
             if($conn->connect_error){
@@ -23,7 +23,7 @@
             $foo = false;
 			$sql = "SELECT email, mot_de_passe FROM buveurs";
 			$resultat = $conn->query($sql);
-			
+			echo $resultat;
 			if ($resultat->num_rows > 0) {
 			// on parse pour vérifier
 			while($row = $result->fetch_assoc()) {
@@ -31,10 +31,7 @@
 					{$foo = true; }
 					}
 			} 
-			else {
-			header('Location: http://snt.egd.mg:8080/~groupetest/index.html');
-			exit();
-			}
+			
 			// si l'utilisateur n'a pas été identifié on revient à l'index.
 			if ($foo == false)  { echo 'Connexion non réussie'; }
 			else { echo 'Connexion échouée'} ;
