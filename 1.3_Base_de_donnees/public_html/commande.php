@@ -60,22 +60,27 @@
 		<br/>
 		<div class='shadowbox' align='center'>
 			<h3 onmouseover="couleurtitre()">Voici la liste de nos vins en stock</h3>
+			<h4> Cochez les vins que souhaitez commander</h4>
+			<form>
 			<table align='center'>
 			<tr>
-				<td width='23%' ><p> Cru </p></td><td width='23%'><p> Année </p></td> <td width='23%'><p> degrés</p></td><td width='23%'><p> Stock </p></td>
+				<td width='25%' ><p> Cru </p></td><td width='10%'><p> Année </p></td> <td width='15%'><p> degrés</p></td><td width='15%'><p> Stock </p>
+				</td><td> Commande </td>
 			</tr>
 			<?php 
-			$sql = "SELECT cru, annee,degre,stock FROM vins ;";
+			$sql = "SELECT nv,cru, annee,degre,stock FROM vins ;";
 			$resultat = mysqli_query($conn, $sql);
 			if (mysqli_num_rows($resultat) > 0) {
 			// on parse la liste des vins
 				while($row = mysqli_fetch_assoc($resultat)) {
-					 echo "<tr><td>".$row['cru']."</td><td>".$row['annee']."</td><td>".$row['degre']."</td><td>".$row['stock']."</td></tr>" ;
+					 echo "<tr><td>".$row['cru']."</td><td>".$row['annee']."</td><td>".$row['degre']."</td><td>".$row['stock']."</td>
+					 <input type='checkbox'  name='commander' value=".$row['nv']."></tr>" ;
 					}
 			  }
-			else {echo "<tr><td colspan='4'>Pas de résultats </td></tr>";}
+			else {echo "<tr><td colspan='5'>Pas de résultats </td></tr>";}
 			?>
 			</table>
+			</form>
 		</div>
 		<br/>
 

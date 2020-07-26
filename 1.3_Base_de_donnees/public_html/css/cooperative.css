@@ -86,6 +86,9 @@ td, th {
   }
   
 .shadowbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align : center;
   width: 90%;
   border: 1px solid #333;
@@ -110,3 +113,5 @@ td, th {
 .flotte {
 float:right;
 }
+
+#global {margin: 0 auto;}
