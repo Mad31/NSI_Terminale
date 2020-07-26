@@ -61,7 +61,7 @@
 		<div class='shadowbox' align='center'>
 			<h3 onmouseover="couleurtitre()">Voici la liste de nos vins en stock</h3>
 			<h4> Cochez les vins que souhaitez commander</h4>
-			<form>
+			<form id='form1'>
 			<table align='center'>
 			<tr>
 				<td width='35%' ><p> Cru </p></td><td width='10%'><p> Année </p></td> <td width='15%'><p> degrés</p></td><td width='15%'><p> Stock </p>
