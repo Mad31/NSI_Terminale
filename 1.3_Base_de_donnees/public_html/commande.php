@@ -1,34 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-		<?php
-			$servername = 'localhost';
-			$username = $_GET['groupe'];
-			$password = 12345 ;
-			$database = $_GET['groupe'];
-            
-            //On établit la connexion
-            $conn = new mysqli($servername, $username, $password, $database);
-            
-            //On vérifie la connexion
-            if($conn->connect_error){
-                die('Erreur : ' .$conn->connect_error);
-            }
-            $foo = false;
-			$sql = "SELECT email, mot_de_passe FROM buveurs";
-			$resultat = $conn->query($sql);
-			echo $resultat;
-			if ($resultat->num_rows > 0) {
-			// on parse pour vérifier
-			while($row = $result->fetch_assoc()) {
-					if ($row['email'] == $_GET['login'] and $row['mot_de_passe'] == $_GET['password'])
-					{$foo = true; }
-					}
-			} 
-			
-			// si l'utilisateur n'a pas été identifié on revient à l'index.
-			if ($foo == false)  { echo 'Connexion non réussie'; }
-			else { echo 'Connexion échouée'} ;
-        ?>
+		
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="css/cooperative.css">
@@ -45,6 +17,34 @@
 		  
       </header>
       <main>
+	  <?php
+			$servername = 'localhost';
+			$username = $_GET['groupe'];
+			$password = 12345 ;
+			$database = $_GET['groupe'];
+            
+            //On établit la connexion
+            $conn = new mysqli($servername, $username, $password, $database);
+            
+            //On vérifie la connexion
+            if($conn->connect_error){
+                die('Erreur : ' .$conn->connect_error);
+            }
+            $foo = false;
+			$sql = "SELECT email, mot_de_passe FROM buveurs";
+			$resultat = mysqli_query($conn, $sql);
+			if (mysqli_num_rows($resultat) > 0) {
+			// on parse pour vérifier
+			while($row = mysqli_fetch_assoc($result)) {
+					if ($row['email'] == $_GET['login'] and $row['mot_de_passe'] == (int)$_GET['password'])
+					{$foo = true; }
+					}
+			} 
+			
+			// si l'utilisateur n'a pas été identifié on revient à l'index.
+			if ($foo == false)  { echo 'Connexion non réussie'; }
+			else { echo 'Connexion échouée'} ;
+        ?>
         <div class='shadowbox'>
 			<h3 onmouseover="couleurtitre()">Bienvenue</h3>
 			Nous sommes le <?php echo date("d:m:y")?> et il est <?php echo date("H:i:s");?>
