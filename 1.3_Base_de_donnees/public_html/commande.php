@@ -7,27 +7,7 @@
   </head>
   <body>
       <header>
-	  	
-		  <p class="flotte">
-          <img src="images/cooperative.jpg" width="450" alt="cooperative" />
-		  </p>
-          <h1>La Coopérative</h1>
-		  <h2>Activité 1.3 Implémenter une base de données</h2>
-		  
-      </header>
-      <main>
-	  
-        <div class='shadowbox' align='center'>
-			<h3 onmouseover="couleurtitre()">Bienvenue</h3>
-			Nous sommes le <?php echo date("d:m:y")?> et il est <?php echo date("H:i:s");?>
-			<br/>
-			votre adresse IP est  <?php echo $_SERVER['REMOTE_ADDR'];?><br/>
-			Ce script est exécuté sur le serveur <?php echo $_SERVER['SERVER_SOFTWARE'];?> qui se 
-			trouve à l'adresse <?php echo $_SERVER['SERVER_ADDR']?>.<br/>
-			Vous appartenez au groupe <?php echo $_GET['groupe']; ?> <br>
-		</div>
-		<div class='shadowbox' align='center'>
-		<?php
+	  		<?php
 			$servername = 'localhost';
 			$username = $_GET['groupe'];
 			$password = 12345 ;
@@ -53,9 +33,30 @@
 			else {echo "Pas de résultats";}
 			
 			// si l'utilisateur n'a pas été identifié on revient à l'index.
-			if ($foo == false)  { echo "Connexion échouée !!! "; }
-			else { echo "Connexion Réussie !!! "; } 
+			if ($foo == false)  { header('Location: echec.html');
+				exit(); }
         ?>
+	  	
+		  <p class="flotte">
+          <img src="images/cooperative.jpg" width="450" alt="cooperative" />
+		  </p>
+          <h1>La Coopérative</h1>
+		  <h2>Activité 1.3 Implémenter une base de données</h2>
+		  
+      </header>
+      <main>
+	  
+        <div class='shadowbox' align='center'>
+			<h3 onmouseover="couleurtitre()">Bienvenue</h3>
+			Nous sommes le <?php echo date("d:m:y")?> et il est <?php echo date("H:i:s");?>
+			<br/>
+			votre adresse IP est  <?php echo $_SERVER['REMOTE_ADDR'];?><br/>
+			Ce script est exécuté sur le serveur <?php echo $_SERVER['SERVER_SOFTWARE'];?> qui se 
+			trouve à l'adresse <?php echo $_SERVER['SERVER_ADDR']?>.<br/>
+			Vous appartenez au groupe <?php echo $_GET['groupe']; ?> <br>
+		</div>
+		<div class='shadowbox' align='center'>
+
 		</div>
 		<br/>
 
