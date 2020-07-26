@@ -86,8 +86,6 @@ td, th {
   }
   
 .shadowbox {
-  display: flex;
-  justify-content: center;
   text-align : center;
   width: 95%;
   border: 1px solid #333;

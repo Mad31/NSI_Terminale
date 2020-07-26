@@ -74,7 +74,7 @@
 			// on parse la liste des vins
 				while($row = mysqli_fetch_assoc($resultat)) {
 					 echo "<tr><td>".$row['cru']."</td><td>".$row['annee']."</td><td>".$row['degre']."</td><td>".$row['stock']."</td><td>
-					 <input type='checkbox'  name='commander' value=".$row['nv']."></td></tr>" ;
+					 <input type='checkbox'  name='commander[]' value=".$row['nv']."></td></tr>" ;
 					}
 			  }
 			else {echo "<tr><td colspan='5'>Pas de résultats </td></tr>";}
