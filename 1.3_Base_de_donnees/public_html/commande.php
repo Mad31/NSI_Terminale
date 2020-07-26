@@ -46,9 +46,8 @@
 			if (mysqli_num_rows($resultat) > 0) {
 			// on parse pour vérifier
 				while($row = mysqli_fetch_assoc($resultat)) {
-					echo "id: " . $row["email"]. " - Name: " . $row["mot_de_passe"]. "<br>";
-					 // if ($row['email'] == $_GET['login'] and $row['mot_de_passe'] == (int)$_GET['password'])
-					// {$foo = true; }
+					 if ($row['email'] == $_GET['login'] and $row['mot_de_passe'] == (int)$_GET['password'])
+					{$foo = true; }
 					}
 			  }
 			else {echo "Pas de résultats";}
