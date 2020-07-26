@@ -72,7 +72,7 @@
 				while($row = mysqli_fetch_assoc($resultat)) {
 					if(isset($_GET['commander']) && in_array($row['nv'], $_GET['commander'])){
 						// On regarde si une commande n'a pas déjà été passée.
-						$sql2 = "SELECT email,nv FROM commande WHERE nv=$row['nv'] AND email = $_GET['login];";
+						$sql2 = "SELECT email,nv FROM commande WHERE nv='".$row['nv']."' AND email = '".$_GET['login']."';";
 						$resultat2 = mysqli_query($conn, $sql2);
 						if (mysqli_num_rows($resultat) == 0) {
 							echo "<tr><td>".$row['cru']."</td><td>".$row['annee']."</td><td>".$row['degre']."</td></tr>" ;}
