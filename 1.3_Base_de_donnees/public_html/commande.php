@@ -7,6 +7,40 @@
   </head>
   <body>
       <header>
+	  	<?php
+			$servername = 'localhost';
+			$username = $_GET['groupe'];
+			$password = 12345 ;
+			$database = $_GET['groupe'];
+            
+            //On établit la connexion
+            $conn = new mysqli($servername, $username, $password, $database$);
+            
+            //On vérifie la connexion
+            if($conn->connect_error){
+                die('Erreur : ' .$conn->connect_error);
+            }
+            $foo = false;
+			$sql = "SELECT email, mot_de_passe FROM buveurs";
+			$resultat = $conn->query($sql);
+			
+			if ($resultat->num_rows > 0) {
+			// on parse pour vérifier
+				while($row = $result->fetch_assoc()) {
+					if ($row['email'] == $_GET['login'] and $row['mot_de_passe'] == $_GET['password'])
+					{$foo = true}
+					}
+			} 
+			else {
+			header('Location: index.html');
+			exit();
+			}
+			// si l'utilisateur n'a pas été identifié on revient à l'index.
+			if ($foo == false)  {
+				header('Location: index.html');
+			exit();
+			}
+        ?>
 		  <p class="flotte">
           <img src="images/cooperative.jpg" width="450" alt="cooperative" />
 		  </p>
@@ -26,24 +60,9 @@
 		</div>
 		<br/>
 		<div class='shadowbox'>
-			<?php
-				$servername = 'localhost';
-				$username = $_GET['groupe'];
-				$password = 12345 ;
-            
-            //On établit la connexion
-            $conn = new mysqli($servername, $username, $password);
-            
-            //On vérifie la connexion
-            if($conn->connect_error){
-                die('Erreur : ' .$conn->connect_error);
-            }
-            echo 'Connexion à la base réussie';
-        ?>
-		</div>
-		
 
-        
+		</div>
+	
       </main>
       <aside>
         <div>

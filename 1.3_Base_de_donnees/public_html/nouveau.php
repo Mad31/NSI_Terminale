@@ -25,7 +25,7 @@
 			Vous appartenez au groupe <?php echo $_GET['groupe']; ?> <br>
 		</div>
 		<br/>
-		<div class='shadowbox'>
+		<div class='shadowbox' align='center>
 			<?php
 				$servername = 'localhost';
 				$username = $_GET['groupe'];
@@ -42,9 +42,10 @@
             echo 'Connexion à la base réussie';
         ?>
 		</div>
-		<div class='shadowbox'>
+		<div class='shadowbox' align='center'>
 			Bonjour <?php echo $_GET['prenom']; ?> <?php echo $_GET['nom']; ?>, vous êtes désormais inscrit sur notre site sous l'identifiant
-			<?php echo $_GET['login']; ?> et vous habitez à <? echo $_GET['adresse']; ?>
+			<?php echo $_GET['login']; ?> et vous habitez à <? echo $_GET['adresse']; ?><br/>
+			Vous pouvez maintenant passer une commande en vous connectant sur notre site, grâce à la boite de connexion dans le menu de gauche.
 		
 
         <?php
