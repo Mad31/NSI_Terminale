@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" href="css/cooperative.css">
-    <script src="javascript/morpion.js"  type="text/javascript"></script>
-  </head>
-  <body>
-      <header>
-	  	<?php
+		<?php
 			$servername = 'localhost';
 			$username = $_GET['groupe'];
 			$password = 12345 ;
@@ -36,6 +29,14 @@
 			if ($foo == false)  { echo 'Connexion non réussie'; }
 			else { echo 'Connexion échouée'} ;
         ?>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="css/cooperative.css">
+    <script src="javascript/morpion.js"  type="text/javascript"></script>
+  </head>
+  <body>
+      <header>
+	  	
 		  <p class="flotte">
           <img src="images/cooperative.jpg" width="450" alt="cooperative" />
 		  </p>
@@ -54,10 +55,7 @@
 			Vous appartenez au groupe <?php echo $_GET['groupe']; ?> <br>
 		</div>
 		<br/>
-		<div class='shadowbox'>
 
-		</div>
-	
       </main>
       <aside>
         <div>
