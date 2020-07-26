@@ -77,10 +77,8 @@
 						if (mysqli_num_rows($resultat2) == 0) {
 							echo "<tr><td>".$row['cru']."</td><td>".$row['annee']."</td><td>".$row['degre']."</td></tr>" ;
 							$today = date("Y-m-d");
-							echo $today;
 							$sql3 ="INSERT INTO commande (email, nv,date_commande, livraison_commande, quantite) 
 							VALUES ('".$_GET['login']."','".$row['nv']."', '".$today."',0,2);";
-							echo "<tr><td colspan =3>".$sql3."</td></tr>";
 							mysqli_query($conn, $sql3);}
 						else { echo "<tr><td>".$row['cru']."</td><td colspan='2'> Ce vin est déjà commandé</td></tr>" ;}
 					}
@@ -93,7 +91,9 @@
 				}
 			echo "</table>";
 			?>
-			
+			<h3 align-text='center'>Merci d'avoir passé une commande sur notre site, vous serez livré prochainement</h3>
+			<br/>
+			<a href="index.html"> Retour à l'accueil </a>
 			<br/>
 		</div>
 		<br/>
