@@ -47,6 +47,7 @@
       <main>
 	  
         <div class='shadowbox' align='center'>
+			<p align='center'
 			<h3 onmouseover="couleurtitre()">Bienvenue</h3>
 			Nous sommes le <?php echo date("d:m:y")?> et il est <?php echo date("H:i:s");?>
 			<br/>
@@ -54,9 +55,22 @@
 			Ce script est exécuté sur le serveur <?php echo $_SERVER['SERVER_SOFTWARE'];?> qui se 
 			trouve à l'adresse <?php echo $_SERVER['SERVER_ADDR']?>.<br/>
 			Vous appartenez au groupe <?php echo $_GET['groupe']; ?> <br>
+			</p>
 		</div>
+		<br/>
 		<div class='shadowbox' align='center'>
-
+			<h3 onmouseover="couleurtitre()">Voici la liste de nos vins en stock</h3>
+			<?php 
+			$sql = "SELECT cru, annee,degre,stock FROM buveurs";
+			$resultat = mysqli_query($conn, $sql);
+			if (mysqli_num_rows($resultat) > 0) {
+			// on parse la liste des vins
+				while($row = mysqli_fetch_assoc($resultat)) {
+					 echo "Cru : ".$row['cru']."- Année : ".$row['annee']."- Degre : ".$row['degre']."- Stock : ".$row['stock'] ;
+					}
+			  }
+			else {echo "Pas de résultats";}
+			?>
 		</div>
 		<br/>
 
