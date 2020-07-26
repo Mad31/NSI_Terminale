@@ -70,17 +70,14 @@
 			if (mysqli_num_rows($resultat) > 0) {
 			// on parse la liste des vins
 				while($row = mysqli_fetch_assoc($resultat)) {
-					// if(in_array($row['nv'], (int)$_GET['commander'])){
-					 echo "<tr><td>".$row['cru']."</td><td>".$row['annee']."</td><td>".$row['degre']."</td></tr>" ;
-					 // }
+					if(in_array($row['nv'], (int)$_GET['commander'])){
+					 echo "<tr><td>".$row['cru']."</td><td>".$row['annee']."</td><td>".$row['degre']."</td></tr>" ;}
 					}
 			  }
 			else {echo "<tr><td colspan='3'>Pas de vins en stock </td></tr>";}
-			//if (empty($_GET['commander'])) {
-			//		echo "<tr><td colspan='3'>Pas de vins commandés ! </td></tr>";
-			// 	}
+			echo "</table>";
 			?>
-			</table>
+			
 			<br/>
 		</div>
 		<br/>
