@@ -74,7 +74,7 @@
 						// On regarde si une commande n'a pas déjà été passée.
 						$sql2 = "SELECT email,nv FROM commande WHERE nv='".$row['nv']."' AND email = '".$_GET['login']."';";
 						$resultat2 = mysqli_query($conn, $sql2);
-						if (mysqli_num_rows($resultat) == 0) {
+						if (mysqli_num_rows($resultat2) == 0) {
 							echo "<tr><td>".$row['cru']."</td><td>".$row['annee']."</td><td>".$row['degre']."</td></tr>" ;}
 					}
 					}
