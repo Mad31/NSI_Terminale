@@ -78,10 +78,11 @@
 					}
 			  }
 			else {echo "<tr><td colspan='5'>Pas de résultats </td></tr>";}
-			echo "</table>";
-			echo "<input type='hidden' value='".$_GET['login']."' name='login'>";
-			echo "<input type='hidden' value='".$_GET['password']."' name='password'>";
 			?>
+			</table>
+			<input type='hidden' value=<?php echo $_GET['login']?> name='login' />";
+			<input type='hidden' value=<?php echo $_GET['password']?>  name='password' />
+			
 			
 			<br/>
 			<p><input type='submit' value='valider votre commande'/></p>
