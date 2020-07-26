@@ -62,8 +62,7 @@
 			<h3 onmouseover="couleurtitre()">Voici Le récapitulatif de votre commande :</h3>
 			<table align='center'>
 			<tr>
-				<td width='35%' ><p> Cru </p></td><td width='10%'><p> Année </p></td> <td width='15%'><p> degrés</p></td><td width='15%'><p> Stock </p>
-				</td><td width='10%'> Commande </td>
+				<td width='35%' ><p> Cru </p></td><td width='10%'><p> Année </p></td> <td width='15%'><p> degrés</p></td>
 			</tr>
 			<?php 
 			$sql = "SELECT nv, cru, annee, degre FROM vins ;";
@@ -75,7 +74,10 @@
 					 echo "<tr><td>".$row['cru']."</td><td>".$row['annee']."</td><td>".$row['degre']."</td></tr>" ;}
 					}
 			  }
-			else {echo "<tr><td colspan='5'>Pas de vins en stock </td></tr>";}
+			else {echo "<tr><td colspan='3'>Pas de vins en stock </td></tr>";}
+			if (empty($_GET['commander'])) {
+					echo "<tr><td colspan='3'>Pas de vins commandés ! </td></tr>";
+				}
 			echo "</table>";
 			?>
 			
