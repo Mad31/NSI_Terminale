@@ -59,33 +59,27 @@
 		</div>
 		<br/>
 		<div class='shadowbox' align='center'>
-			<h3 onmouseover="couleurtitre()">Voici la liste de nos vins en stock</h3>
-			<h4> Cochez les vins que souhaitez commander</h4>
-			<form id='form1' action='recap.php' method='get'>
+			<h3 onmouseover="couleurtitre()">Voici Le récapitulatif de votre commande :</h3>
 			<table align='center'>
 			<tr>
 				<td width='35%' ><p> Cru </p></td><td width='10%'><p> Année </p></td> <td width='15%'><p> degrés</p></td><td width='15%'><p> Stock </p>
 				</td><td width='10%'> Commande </td>
 			</tr>
 			<?php 
-			$sql = "SELECT nv,cru, annee,degre,stock FROM vins ;";
+			$sql = "SELECT nv, cru, annee, degre FROM vins ;";
 			$resultat = mysqli_query($conn, $sql);
 			if (mysqli_num_rows($resultat) > 0) {
 			// on parse la liste des vins
 				while($row = mysqli_fetch_assoc($resultat)) {
-					 echo "<tr><td>".$row['cru']."</td><td>".$row['annee']."</td><td>".$row['degre']."</td><td>".$row['stock']."</td><td>
-					 <input type='checkbox'  name='commander[]' value=".$row['nv']."></td></tr>" ;
+					if(in_array($row['nv'], $_GET['commander'])){
+					 echo "<tr><td>".$row['cru']."</td><td>".$row['annee']."</td><td>".$row['degre']."</td></tr>" ;}
 					}
 			  }
-			else {echo "<tr><td colspan='5'>Pas de résultats </td></tr>";}
+			else {echo "<tr><td colspan='5'>Pas de vins en stock </td></tr>";}
 			echo "</table>";
-			echo "<input type='hidden' value='".$_GET['login']."' name='login'>";
-			echo "<input type='hidden' value='".$_GET['password']."' name='password'>";
 			?>
 			
 			<br/>
-			<p><input type='submit' value='valider votre commande'/></p>
-			</form>
 		</div>
 		<br/>
 
@@ -93,7 +87,7 @@
       <aside>
         <div>
           <h3>Commander</h3>
-          Cette page vous permettra de commander les vins de notre production à partir de notre stock.Choissisez dans le liste ci-contre
+          Cette page récapitule les vins que vous avez commandés.
         </div>
         <div>
           <h3>Identifiez-vous !</h3>
@@ -101,8 +95,6 @@
 		  <br/>
 		<?php 
 			echo "Mon Login : ".$_GET['login'];
-			  }
-			else {echo "Pas de résultats<br/> Que faites vous ici ?";}
 		?>
         </div>
       </aside>

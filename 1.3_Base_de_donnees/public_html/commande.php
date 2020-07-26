@@ -68,7 +68,7 @@
 				</td><td width='10%'> Commande </td>
 			</tr>
 			<?php 
-			$sql = "SELECT nv,cru, annee,degre,stock FROM vins ;";
+			$sql = "SELECT nv FROM vins ;";
 			$resultat = mysqli_query($conn, $sql);
 			if (mysqli_num_rows($resultat) > 0) {
 			// on parse la liste des vins
@@ -77,7 +77,7 @@
 					 <input type='checkbox'  name='commander[]' value=".$row['nv']."></td></tr>" ;
 					}
 			  }
-			else {echo "<tr><td colspan='5'>Pas de résultats </td></tr>";}
+			else {echo "<tr><td colspan='5'>Pas de vins en stock </td></tr>";}
 			?>
 			</table>
 			<input type='hidden' value=<?php echo $_GET['login']; ?> name='login' />";
