@@ -39,7 +39,10 @@
             if($conn->connect_error){
                 die('Erreur : ' .$conn->connect_error);
             }
-            
+            $foo = false;
+			$sql = "SELECT email, mot_de_passe FROM buveurs";
+			$resultat = mysqli_query($conn, $sql);
+			
         ?>
 		<br/>
 
