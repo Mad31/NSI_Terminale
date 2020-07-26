@@ -90,25 +90,21 @@
       <aside>
         <div>
           <h3>Commander</h3>
-          Cette page vous permettra de commander les vins de notre production à partir de notre strock.
+          Cette page vous permettra de commander les vins de notre production à partir de notre stock.Choissisez dans le liste ci-contre
         </div>
         <div>
           <h3>Identifiez-vous !</h3>
-          <h4>Je suis déjà inscrit</h4>
-          <form>
-              <p>Login : <input type='text' name='login'/></p>
-              <p>Mot de passe : <input type='password' name='password'/></p>
-			  <p>Groupe de travail : <br/>
-                    <select name='groupe'>
-						<option value='groupetest'>groupe test</option>
-                        <option value='groupe1'>groupe 1</option>
-                        <option value='groupe2'>groupe 2</option>
-                        <option value='groupe3'>groupe 3</option>
-						<option value='groupe4'>groupe 4</option>
-                    </select>
-                </p>
-              <p><input type='submit' value='Valider'/></p>
-          </form>
+          <h4>Je suis déjà connecté !</h4>
+		  <br/>
+		<?php 
+			$sql = "SELECT email, mot_de_passe FROM buveurs";
+			$resultat = mysqli_query($conn, $sql);
+			if (mysqli_num_rows($resultat) > 0) {
+			$row = mysqli_fetch_assoc($resultat);
+			echo "Mon Login : ".$row['email'];
+			  }
+			else {echo "Pas de résultats<br/> Que faites vous ici ?";}
+		?>
         </div>
       </aside>
       <footer>
