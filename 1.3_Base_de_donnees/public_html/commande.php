@@ -61,7 +61,7 @@
 		<div class='shadowbox' align='center'>
 			<h3 onmouseover="couleurtitre()">Voici la liste de nos vins en stock</h3>
 			<?php 
-			$sql = "SELECT cru, annee,degre,stock FROM vins";
+			$sql = "SELECT cru, annee,degre,stock FROM vins ;";
 			$resultat = mysqli_query($conn, $sql);
 			if (mysqli_num_rows($resultat) > 0) {
 			// on parse la liste des vins
