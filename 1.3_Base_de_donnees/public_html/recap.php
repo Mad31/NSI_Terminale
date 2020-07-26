@@ -75,7 +75,11 @@
 						$sql2 = "SELECT email,nv FROM commande WHERE nv='".$row['nv']."' AND email = '".$_GET['login']."';";
 						$resultat2 = mysqli_query($conn, $sql2);
 						if (mysqli_num_rows($resultat2) == 0) {
-							echo "<tr><td>".$row['cru']."</td><td>".$row['annee']."</td><td>".$row['degre']."</td></tr>" ;}
+							echo "<tr><td>".$row['cru']."</td><td>".$row['annee']."</td><td>".$row['degre']."</td></tr>" ;
+							$sql3 ="INSERT INTO commande (email, nv,date_commande, livraison_commande, quantite 
+							VALUES ('".$_GET['login']."','".$row['cru']."',".date(Y-m-d)."',0,2);";
+							mysqli_query($conn, $sql3);}
+						else { echo "<tr><td>".$row['cru']."</td><td colspan='2'> Ce Vin est déjà commandé</td></tr>" ;}
 					}
 					}
 			  }
