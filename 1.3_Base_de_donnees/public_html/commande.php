@@ -68,7 +68,7 @@
 				</td><td width='10%'> Commande </td>
 			</tr>
 			<?php 
-			$sql = "SELECT nv FROM vins ;";
+			$sql = "SELECT nv, cru, annee, degre, stock FROM vins ;";
 			$resultat = mysqli_query($conn, $sql);
 			if (mysqli_num_rows($resultat) > 0) {
 			// on parse la liste des vins
@@ -82,6 +82,7 @@
 			</table>
 			<input type='hidden' value=<?php echo $_GET['login']; ?> name='login' />";
 			<input type='hidden' value=<?php echo $_GET['password'];?>  name='password' />
+			<input type='hidden' value=<?php echo $_GET['groupe'];?>  name='groupe' />
 			
 			
 			<br/>
