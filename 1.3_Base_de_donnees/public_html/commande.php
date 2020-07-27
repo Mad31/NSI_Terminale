@@ -9,7 +9,7 @@
       <header>
 	  		<?php
 			$servername = 'localhost';
-			$username = $_GET['groupe'];
+			$username = $_GET['groupe'].'admin';
 			$password = 12345 ;
 			$database = $_GET['groupe'];
             

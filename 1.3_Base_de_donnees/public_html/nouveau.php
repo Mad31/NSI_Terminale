@@ -28,7 +28,7 @@
 		<div class='shadowbox' align='center'>
 			<?php
 				$servername = 'localhost';
-				$username = $_GET['groupe'];
+				$username = $_GET['groupe'].'admin';
 				$password = 12345 ;
 				$database = $_GET['groupe'];
             
@@ -59,7 +59,7 @@
 		VALUES ('$login', '$nom', '$prenom', '$mdp', '$adresse');";
 
 		if ($conn->query($sql) === TRUE) {
-					echo "Nouvel enregistement réalisé";
+					echo "<br/>Nouvel enregistement réalisé";
 					} else {
 					echo "Erreur: " . $sql . "<br>" . $conn->error;
 					}
@@ -75,19 +75,26 @@
         <div>
           <h3>Identifiez-vous !</h3>
           <h4>Je suis déjà inscrit</h4>
-          <form action='commande.php' method='get'>
-              <p>Login : <input type='text' name='login'/></p>
-              <p>Mot de passe : <input type='password' name='password'/></p>
-			  <p>Groupe de travail : <br/>
+ 			<form id='form1' action='commande.php' method='get'>
+			<table align='center'>
+				<tr>
+					<td><p>Login : </p></td><td><p><input type='text' name='login'/></p></td>
+				</tr>
+				<tr>
+					<td><p>Mot de passe :</p></td><td><p> <input type='password' name='password'/></p></td>
+				</tr>
+			</table>
+			  <p align='center' >Groupe de travail : <br/>
                     <select name='groupe'>
 						<option value='groupetest'>groupe test</option>
                         <option value='groupe1'>groupe 1</option>
                         <option value='groupe2'>groupe 2</option>
                         <option value='groupe3'>groupe 3</option>
 						<option value='groupe4'>groupe 4</option>
+						<option value='groupe5'>groupe 5</option>
                     </select>
                 </p>
-              <p><input type='submit' value='Valider'/></p>
+              <p align='center'><input type='submit' value='Valider'/></p>
           </form>
         </div>
       </aside>
